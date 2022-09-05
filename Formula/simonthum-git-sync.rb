@@ -1,10 +1,13 @@
 class SimonthumGitSync < Formula
+  revision 1
   desc 'Safe and simple one-script git synchronization'
   homepage 'https://github.com/simonthum/git-sync'
   url 'https://github.com/simonthum/git-sync/archive/refs/heads/master.zip'
   license 'CC0-1.0'
 
   depends_on 'git'
+
+  sha256 "6a2fc3988ed087440edac82b6475d53c1b13162369126bdee6196b25f61134ea"
 
   conflicts_with 'git-extras',
     because: 'both install a `git-sync` binary'
