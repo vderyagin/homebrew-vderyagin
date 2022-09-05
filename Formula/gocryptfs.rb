@@ -4,8 +4,6 @@ class Gocryptfs < Formula
   head 'https://github.com/rfjakob/gocryptfs.git'
   license 'MIT'
 
-  depends_on 'macfuse'
-
   depends_on 'go' => :build
   depends_on 'pkg-config' => :build
   depends_on 'openssl@1.1'
@@ -14,6 +12,20 @@ class Gocryptfs < Formula
     system './build.bash'
     bin.install 'gocryptfs'
   end
+
+  def caveats
+    on_macos do
+      <<~EOS
+        You nee
+        The reasons for disabling this formula can be found here:
+          https://github.com/Homebrew/homebrew-core/pull/64491
+
+        An external tap may provide a replacement formula. See:
+          https://docs.brew.sh/Interesting-Taps-and-Forks
+      EOS
+    end
+  end
+
 
   test do
     system 'true'
