@@ -4,7 +4,7 @@ class Gocryptfs < Formula
   head 'https://github.com/rfjakob/gocryptfs.git'
   license 'MIT'
 
-  depends_on cask: 'macfuse'
+  depends_on 'macfuse'
 
   depends_on 'go' => :build
   depends_on 'pkg-config' => :build
