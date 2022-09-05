@@ -3,7 +3,7 @@ class SimonthumGitSync < Formula
   homepage 'https://github.com/simonthum/git-sync'
   license 'CC0-1.0'
   head 'https://github.com/simonthum/git-sync.git'
-  sha256 'a9927b923e1a9e7a32d040f5e9b3652b7c720eca577158f3c0aad1990803dd5f'
+  sha256 'e2b1b3dc720d9508e446b0908721f3b99112f4412ca0c72594b7c8cfba61bede'
 
   bottle :unneeded
 
