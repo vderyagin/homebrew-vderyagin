@@ -4,6 +4,8 @@ class SimonthumGitSync < Formula
   license 'CC0-1.0'
   head 'https://github.com/simonthum/git-sync.git'
 
+  bottle :unneeded
+
   conflicts_with 'git-extras',
     because: 'both install a `git-sync` binary'
 
