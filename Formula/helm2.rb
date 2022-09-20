@@ -10,8 +10,8 @@ class Helm2 < Formula
     because: 'both install a `helm` binary'
 
   def install
-    bin.install 'darwin-amd64/helm'
-    bin.install 'darwin-amd64/tiller'
+    bin.install 'helm'
+    bin.install 'tiller'
   end
 
   test do
