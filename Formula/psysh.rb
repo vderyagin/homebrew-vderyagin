@@ -1,10 +1,10 @@
 class Psysh < Formula
   desc 'A runtime developer console, interactive debugger and REPL for PHP'
   homepage 'https://psysh.org'
-  url 'https://github.com/bobthecow/psysh/releases/download/v0.11.8/psysh-v0.11.8.tar.gz'
+  url 'https://github.com/bobthecow/psysh/releases/download/v0.12.4/psysh-v0.12.4.tar.gz'
   license 'Apache-2.0'
 
-  sha256 '54ad5edea40668de8a73fe5d51a1b0ac702a93dca2242c1b5b6f71ea2ea71d0e'
+  sha256 '785bddd5650694d9b4d051869a175392f9faac327687ee8a81af0305083072df'
 
   depends_on 'php'
 
