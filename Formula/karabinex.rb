@@ -14,6 +14,22 @@ class KarabinerElementsRequirement < Requirement
   end
 end
 
+class NodeRequirement < Requirement
+  fatal true
+
+  satisfy(build_env: false) do
+    which("node")
+  end
+
+  def message
+    "karabinex requires Node.js. Please install Node.js or ensure `node` is on your PATH."
+  end
+
+  def display_s
+    "Node.js"
+  end
+end
+
 class Karabinex < Formula
   desc "Generate Karabiner-Elements complex modifications"
   homepage "https://github.com/vderyagin/karabinex"
@@ -23,7 +39,7 @@ class Karabinex < Formula
 
   depends_on "bun" => :build
   depends_on KarabinerElementsRequirement
-  depends_on "node"
+  depends_on NodeRequirement
 
   def install
     system "bun", "install", "--frozen-lockfile"
