@@ -1,3 +1,19 @@
+class KarabinerElementsRequirement < Requirement
+  fatal true
+
+  satisfy(build_env: false) do
+    File.executable?("/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli")
+  end
+
+  def message
+    "karabinex requires Karabiner-Elements. Please run `brew install --cask karabiner-elements` first."
+  end
+
+  def display_s
+    "Karabiner-Elements"
+  end
+end
+
 class Karabinex < Formula
   desc "Generate Karabiner-Elements complex modifications"
   homepage "https://github.com/vderyagin/karabinex"
@@ -6,7 +22,7 @@ class Karabinex < Formula
   head "https://github.com/vderyagin/karabinex.git", branch: "master"
 
   depends_on "bun" => :build
-  depends_on cask: "karabiner-elements"
+  depends_on KarabinerElementsRequirement
   depends_on "node"
 
   def install
@@ -14,6 +30,13 @@ class Karabinex < Formula
     system "bun", "run", "build-cli"
 
     bin.install "dist/karabinex"
+  end
+
+  def caveats
+    <<~EOS
+      karabinex uses karabiner_cli when generating, linting, or replacing
+      configuration.
+    EOS
   end
 
   test do
